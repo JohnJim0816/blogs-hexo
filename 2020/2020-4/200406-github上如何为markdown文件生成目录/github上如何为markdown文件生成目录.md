@@ -10,5 +10,7 @@
 网页生成的方法并不好用，使用toc工具，比如gh-md-toc这个神器，如何安装可参考这篇博文[快速生成Github README.md的目录](https://www.jianshu.com/p/302abe331dcb)。安装后在终端输入命令就可以在终端里生成目录，但是也比较麻烦，因为是在终端生成的，复制粘贴到md文件里比较麻烦，还要注意格式对齐的问题。
 ## 最简单的markdown插件
 笔者目前了解到的最最最简单的莫过于VSCode中的Markdown All in One
-插件了，安装后点开md文件，然后快捷键```CTRL(CMD)+SHIFT+P```，输入```Markdown All in One: Create Table of Contents```回车即可，效果如下：
-
+插件了，安装后点开md文件，然后快捷键```CTRL(CMD)+SHIFT+P```，输入```Markdown All in One: Create Table of Contents```回车即可，如下：
+1.png
+2.png
+3.png
