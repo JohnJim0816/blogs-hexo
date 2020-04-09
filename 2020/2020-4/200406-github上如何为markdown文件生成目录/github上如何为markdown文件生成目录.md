@@ -17,7 +17,7 @@
 
 <img src="https://github.com/JohnJim0816/blogs/blob/master/2020/2020-4/200406-github上如何为markdown文件生成目录/figs/1.png" />
 
-<img src="https://img-blog.csdnimg.cn/20200406223421963.png" />
+<img src="https://github.com/JohnJim0816/blogs/blob/master/2020/2020-4/200406-github上如何为markdown文件生成目录/figs/2.png" />
 
-<img src="https://img-blog.csdnimg.cn/20200406223428541.png" />
+<img src="https://github.com/JohnJim0816/blogs/blob/master/2020/2020-4/200406-github上如何为markdown文件生成目录/figs/3.png" />
 
