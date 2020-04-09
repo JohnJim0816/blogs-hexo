@@ -15,7 +15,7 @@
 笔者目前了解到的最最最简单的莫过于VSCode中的Markdown All in One
 插件了，安装后点开md文件，然后快捷键```CTRL(CMD)+SHIFT+P```，输入```Markdown All in One: Create Table of Contents```回车即可，如下：
 
-<img src="https://img-blog.csdnimg.cn/20200406223412339.png" />
+<img src="https://github.com/JohnJim0816/blogs/blob/master/2020/2020-4/200406-github上如何为markdown文件生成目录/figs/1.png" />
 
 <img src="https://img-blog.csdnimg.cn/20200406223421963.png" />
 
