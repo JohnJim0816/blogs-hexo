@@ -1,7 +1,0 @@
-Sub Set_RGB()
-    Dim r As Range,arr
-    For Each r In Range("A:xxx")  //xxx为最大列标，点击一个格子然后ctrl+方向右键就能跳到最大列
-        arr = Split(R,",")
-        r.Interior.Color = RGB(CInt(arr(0)),CInt(arr(1)),CInt(arr(2)))
-    Next
-End Sub
