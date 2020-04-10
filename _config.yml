@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 00:20:32
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-10 14:08:33
+# @Last Modified time: 2020-04-10 16:32:58
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -65,6 +65,12 @@ index_generator:
   per_page: 10
   order_by: -date
 
+# Search 
+search:
+  path: ./public/search.xml
+  field: all
+  format: html
+  limit: 10000
 
 
 # Category & Tag
