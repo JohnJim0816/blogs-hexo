@@ -12,4 +12,4 @@ tags:
 
 dsaafwefdsa
 
-![](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/johnjim.jpg)
+

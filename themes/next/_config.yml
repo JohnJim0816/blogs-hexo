@@ -1,3 +1,7 @@
+# @Author: Jiang Ji
+# @Date:   2020-04-10 13:43:35
+# @Last Modified by:   Jiang Ji
+# @Last Modified time: 2020-04-10 14:14:24
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -47,10 +51,12 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories/
-  #about: /about/
   archives: /archives/
+  categories: /categories/
   tags: /tags/
+  about: /about/
+  costumed: /costumed/
+  
   #sitemap: /sitemap.xml
   #commonweal: /404/
 
