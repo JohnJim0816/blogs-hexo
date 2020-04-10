@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:27:41
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-10 23:17:33
+# @Last Modified time: 2020-04-11 07:46:56
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -17,7 +17,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://johnjim0816.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

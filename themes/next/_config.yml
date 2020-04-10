@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:33:21
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-11 07:38:20
+# @Last Modified time: 2020-04-11 07:49:10
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # See: https://theme-next.org/docs/theme-settings/
@@ -71,8 +71,8 @@ footer:
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
 
-  # Powered by Hexo & NexT
-  powered: true
+  # Powered by Hexo & NexT，网页底部显示由hexo驱动
+  powered: false 
 
   # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
@@ -90,11 +90,11 @@ footer:
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
-creative_commons:
+creative_commons: # 版权声明
   license: by-nc-sa
   sidebar: false
-  post: false
-  language:
+  post: true
+  language: 
 
 
 # ---------------------------------------------------------------
@@ -210,7 +210,7 @@ links:
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
-toc:
+toc: # 文章目录
   enable: true
   # Automatically add list number to toc.
   number: true
@@ -223,7 +223,7 @@ toc:
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
-chat:
+chat: # 即与作者聊天的选项
   enable: false
   #service: chatra
   #service: tidio
