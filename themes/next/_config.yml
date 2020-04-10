@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:33:21
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-11 07:49:10
+# @Last Modified time: 2020-04-11 07:55:06
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # See: https://theme-next.org/docs/theme-settings/
@@ -681,7 +681,7 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: cce0409286bec3e29911b0cf4cca06e9
 
 # Growingio Analytics
 growingio_analytics: # <project_id>
