@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:33:21
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-10 21:34:36
+# @Last Modified time: 2020-04-10 22:44:25
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # See: https://theme-next.org/docs/theme-settings/
@@ -122,10 +122,10 @@ darkmode: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  categories: /categories/ || th
+  tags: /tags/ || tags
   archives: /archives/ || archive
+  about: /about/ || user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -168,7 +168,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: /images/johnjim.jpg #/images/avatar.gif
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
@@ -217,9 +217,9 @@ toc:
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: false
+  expand_all: true
   # Maximum heading depth of generated toc.
-  max_depth: 6
+  max_depth: 20
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
@@ -744,7 +744,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto

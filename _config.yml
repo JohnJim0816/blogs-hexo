@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:27:41
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-10 21:35:33
+# @Last Modified time: 2020-04-10 22:44:11
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -9,9 +9,9 @@
 # Site
 title: 小学生的博客
 subtitle: ''
-description: ''
+description: '求知若渴，谦虚若愚'
 keywords:
-author: John Doe
+author: John Jim
 language: zh-CN
 timezone: ''
 
@@ -45,7 +45,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -55,6 +55,14 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: false
+
+# Search 
+search:
+  path: ./public/search.xml
+  field: post
+  format: html
+  limit: 10000
+
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')

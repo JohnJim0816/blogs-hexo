@@ -1,7 +1,10 @@
 ---
 title: 我的Hexo-Github博客搭建笔记
 date: 2020-04-10 21:29:41
-tags:
+categories: 野生技术
+tags: 
+    - hexo
+    - 笔记
 ---
 ## 从零开始搭建个人博客
 
@@ -29,7 +32,7 @@ npm config set registry https://registry.npm.taobao.org
 npm install -g hexo-cli
 ```
 
-然后本地新建一个文件夹如hexo-blogs，并cd到该路径，执行初始化，考虑到每个人命名方式不同，hexo-blogs/这里我称为**主目录**，
+然后本地新建一个文件夹如blogs，并cd到该路径，执行初始化，考虑到每个人命名方式不同，blogs/这里我称为**主目录**，
 
 ```bash
 hexo init
@@ -65,7 +68,7 @@ hexo s
 
 首先Github网页上新建一个repo，名字严格为```用户民.github.io```，比如我的用户名为```JohnJim0816```，则相应的仓库名为```JohnJim0816.github.io```。
 
-然后本地主目录hexo-blogs下，终端运行如下命令安装hexo-deployer-git。
+然后本地主目录blogs下，终端运行如下命令安装hexo-deployer-git。
 
 ```bash
 npm install hexo-deployer-git --save
@@ -79,16 +82,17 @@ deploy:
   repo: https://github.com/JohnJim0816/JohnJim0816.github.io
   branch: master
 ```
-配置完成之后，使用```hexo n 博客题目``` 新建，```hexo g```生成，然后```hexo d```发布，也可以```hexo g -d```将两步合为一步。然后需要等待一段时间，就可以在```https://johnjim0816.github.io/``看到自己的博客了。
+配置完成之后，使用```hexo n 博客题目``` 新建，```hexo g```生成，然后```hexo d```发布，也可以```hexo g -d```将两步合为一步。然后需要等待一段时间，就可以在```https://johnjim0816.github.io/```看到自己的博客了。
+
+
+![fig1](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/4/10/1.png)
 
 ## 安装next主题来装点博客
 
-
-
 hexo自带的主题是landscape，对应带主目录`themes`文件夹下，这个主题只能说是平平无奇！！！
-因此需要安装一个靓靓的主题来使我们的博客秀色可餐，这里推荐[next主题](https://github.com/theme-next/hexo-theme-next)，截止2020年4月10日该主题已经更新到了v7.8.0，可以直接下载整个仓库并在本地解压，将名字改为next，然后放到主目录下的`themes`文件夹下。
+因此需要安装一个靓靓的主题来使我们的博客秀色可餐，这里推荐[next主题](https://github.com/theme-next/hexo-theme-next)，截止2020年4月10日该主题已经更新到了v7.8.0。注意还有一个[iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)，这个虽然star很多但是已经不维护了，所以推荐前面一个。可以直接下载整个仓库并在本地解压，将名字改为next，然后放到主目录下的`themes`文件夹下。
 
-在站点配置文件即`hexo-blogs/_config.yml`中将语言更改为中文，如下，注意冒号之后有一个空格
+在站点配置文件即```blogs/_config.yml```中将语言更改为中文，如下，注意冒号之后有一个空格
 
 ```
 language: zh-CN
@@ -102,4 +106,94 @@ theme: next
 
 保存之后使用hexo g -d可以看到初步效果，不过在类似于这些测试的操作还是建议在本地服务器上进行，github page刷新的速度简直就是谜一样的存在。
 
-### 更多配置
+## 后续优化
+
+### 给本地文章md文件按年月分类
+
+现在```hexo n 文章名```会在```source/_posts/```下创建文件，但是如果文章太多的话放在同一个目录下不好管理，此时可以更改站点配置文件```blogs/_config.yml```中的```new_post_name```，如下
+```yml
+new_post_name: :year/:month/:title.md 
+```
+这样```hexo n 文章名```之后会在```source/_posts/```创建比如2020/04/文章名.md文件，即按年月分类。
+
+### 插入图片
+
+插入图片这个搞了我好久，首先强烈建议使用图床，常见的可以搜索Github+PigGo。然后文章中直接按如下格式即可。
+```markdown
+![fig1](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/4/10/1.png)
+```
+
+插入本地图片的方式参考[CSDN](https://blog.csdn.net/JohnJim0/article/details/105430915)，注意hexo-asset-image模块的安装可能会造成文章目录中文乱码的bug，如下：
+
+![fig2](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/4/10/2.png)
+
+
+### 添加站内搜索
+
+首先安装
+```bash
+npm install hexo-generator-search --save
+```
+然后站点配置文件```blogs/_config.yml```添加
+```yml
+search:
+  path: ./public/search.xml
+  field: post
+  format: html
+  limit: 10000
+```
+主题配置文件```themes/next/_config.yml```设置
+```yml
+local_search:
+  enable: true
+  # If auto, trigger search by changing input.
+  # If manual, trigger search by pressing enter key or search button.
+  trigger: auto
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+```
+
+### 给网页文章增加分类和标签
+
+首先```hexo n page categories```以及```hexo n page tags```新建目录页和标签页，此时本地```source```文件夹下会生成相应的文件夹，将比如```categories```中的index.md更改如下：
+```markdown
+---
+title: 分类
+date: 2020-04-10 21:53:23
+type: categories
+---
+```
+关键是type这一项，```tags```也同理，
+```markdown
+---
+title: 标签
+date: 2020-04-10 21:53:46
+type: tags
+---
+```
+然后在文章开头的Front-matter部分，写上相应分类和标签，如下
+```markdown
+---
+title: 我的Hexo-Github博客搭建笔记
+date: 2020-04-10 21:29:41
+categories: 野生技术
+tags: 
+    - hexo
+    - 笔记
+---
+```
+再到主题配置文件，即```themes```下的```_config.yml```文件，找到```menu```部分，配置如下：
+```yml
+menu:
+  home: / || home
+  categories: /categories/ || th
+  tags: /tags/ || tags
+  archives: /archives/ || archive
+```
+其中```||```后面指向图标的链接，如果没有则图标默认是问号。
+
+由此可以类推新建一个类似于标签、分类这样的菜单栏，可参考[这个博客](https://hoxis.github.io/Hexo+Next%20%E6%96%B0%E5%A2%9E%E8%8F%9C%E5%8D%95%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html)
+
+### 增加百度统计
+
+可参考[官方文档](http://theme-next.iissnan.com/getting-started.html#theme-settings)，
