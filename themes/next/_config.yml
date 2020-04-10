@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:33:21
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-10 23:18:13
+# @Last Modified time: 2020-04-10 23:24:58
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # See: https://theme-next.org/docs/theme-settings/
@@ -247,7 +247,7 @@ read_more_btn: true
 post_meta:
   item_text: true
   created_at: true
-  updated_at:
+  updated_at: 
     enable: true
     another_day: true
   categories: true
