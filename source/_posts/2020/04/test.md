@@ -4,6 +4,7 @@ permalink: test
 date: 2020-04-10 08:53:18
 categories:
 tags:
+
 ---
 
 ## 她的特点
@@ -12,7 +13,13 @@ tags:
 在改变
 
 啊啊是
-![fig1](./test/1.JPG)
+
+的萨福
+dsaf
+
+dsa
+
+![](./test/1.JPG)
 
 
-{% asset_img ./test/1.JPG This is an example image %}
+
