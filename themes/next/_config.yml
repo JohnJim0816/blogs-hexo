@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 13:43:35
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-10 14:14:24
+# @Last Modified time: 2020-04-10 15:17:08
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -55,7 +55,6 @@ menu:
   categories: /categories/
   tags: /tags/
   about: /about/
-  costumed: /costumed/
   
   #sitemap: /sitemap.xml
   #commonweal: /404/
@@ -132,7 +131,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: /images/johnjim.jpg
 
 # Table Of Contents in the Sidebar
 toc:

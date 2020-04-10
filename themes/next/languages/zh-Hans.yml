@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 14:13:05
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-10 14:13:05
+# @Last Modified time: 2020-04-10 14:53:38
 title:
   archive: 归档
   category: 分类
@@ -20,7 +20,6 @@ menu:
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益404
-  costumed: 自定义
 
 sidebar:
   overview: 站点概览
