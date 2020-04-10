@@ -1,3 +1,7 @@
+# @Author: Jiang Ji
+# @Date:   2020-04-10 21:33:21
+# @Last Modified by:   Jiang Ji
+# @Last Modified time: 2020-04-10 21:34:36
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # See: https://theme-next.org/docs/theme-settings/
@@ -98,10 +102,10 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+# scheme: Muse
 #scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
+scheme: Pisces
+# scheme: Gemini
 
 # Dark Mode
 darkmode: false
