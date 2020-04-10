@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>python画动态图并保存视频</title>
-    <url>/2020/04/10/python%E7%94%BB%E5%8A%A8%E6%80%81%E5%9B%BE%E5%B9%B6%E4%BF%9D%E5%AD%98%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<p><img src="/2020/04/10/python%E7%94%BB%E5%8A%A8%E6%80%81%E5%9B%BE%E5%B9%B6%E4%BF%9D%E5%AD%98%E8%A7%86%E9%A2%91/%E5%B0%81%E9%9D%A2.jpeg" alt="&#x5C01;&#x9762;"></p>
-<h1 id="python&#x753B;&#x52A8;&#x6001;&#x56FE;&#x5E76;&#x4FDD;&#x5B58;&#x89C6;&#x9891;"><a href="#python&#x753B;&#x52A8;&#x6001;&#x56FE;&#x5E76;&#x4FDD;&#x5B58;&#x89C6;&#x9891;" class="headerlink" title="python&#x753B;&#x52A8;&#x6001;&#x56FE;&#x5E76;&#x4FDD;&#x5B58;&#x89C6;&#x9891;"></a>python&#x753B;&#x52A8;&#x6001;&#x56FE;&#x5E76;&#x4FDD;&#x5B58;&#x89C6;&#x9891;</h1><h2 id="1-ion-&#x753B;&#x52A8;&#x6001;&#x56FE;"><a href="#1-ion-&#x753B;&#x52A8;&#x6001;&#x56FE;" class="headerlink" title="1 ion()&#x753B;&#x52A8;&#x6001;&#x56FE;"></a>1 ion()&#x753B;&#x52A8;&#x6001;&#x56FE;</h2><p>&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://www.omegaxyz.com/2018/06/03/python-matplotlib-dynamic-graph/" target="_blank" rel="noopener">&#x7F51;&#x9875;</a>&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"> </span><br><span class="line">plt.axis([<span class="number">0</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">plt.ion()</span><br><span class="line"> </span><br><span class="line">xs = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">ys = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    y = np.random.random()</span><br><span class="line">    xs[<span class="number">0</span>] = xs[<span class="number">1</span>]</span><br><span class="line">    ys[<span class="number">0</span>] = ys[<span class="number">1</span>]</span><br><span class="line">    xs[<span class="number">1</span>] = i</span><br><span class="line">    ys[<span class="number">1</span>] = y</span><br><span class="line">    plt.plot(xs, ys) </span><br><span class="line">    plt.pause(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="2-&#x4FDD;&#x5B58;&#x89C6;&#x9891;"><a href="#2-&#x4FDD;&#x5B58;&#x89C6;&#x9891;" class="headerlink" title="2 &#x4FDD;&#x5B58;&#x89C6;&#x9891;"></a>2 &#x4FDD;&#x5B58;&#x89C6;&#x9891;</h2><p>&#x9700;&#x8981;&#x5B89;&#x88C5;FFMpegWriter&#xFF0C;MAC<code>brew install FFMpegWriter</code>&#xFF0C;ubuntu<code>sudo apt-get install FFMpegWriter</code>&#x3002;&#x5728;ion()&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.animation <span class="keyword">import</span> FFMpegWriter</span><br><span class="line"></span><br><span class="line">metadata = dict(title=<span class="string">&apos;Movie Test&apos;</span>, artist=<span class="string">&apos;Matplotlib&apos;</span>,comment=<span class="string">&apos;Movie support!&apos;</span>)</span><br><span class="line">writer = FFMpegWriter(fps=<span class="number">15</span>, metadata=metadata)</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> writer.saving(fig, <span class="string">&quot;writer_test.mp4&quot;</span>, <span class="number">100</span>):  <span class="comment"># 100&#x6307;&#x7684;dpi&#xFF0C;dot per inch&#xFF0C;&#x8868;&#x793A;&#x6E05;&#x6670;&#x5EA6;</span></span><br><span class="line"></span><br><span class="line">    plt.axis([<span class="number">0</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">    plt.ion()</span><br><span class="line">    </span><br><span class="line">    xs = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">    ys = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        y = np.random.random()</span><br><span class="line">        xs[<span class="number">0</span>] = xs[<span class="number">1</span>]</span><br><span class="line">        ys[<span class="number">0</span>] = ys[<span class="number">1</span>]</span><br><span class="line">        xs[<span class="number">1</span>] = i</span><br><span class="line">        ys[<span class="number">1</span>] = y</span><br><span class="line">        plt.plot(xs, ys)</span><br><span class="line">        plt.pause(<span class="number">0.1</span>)</span><br><span class="line">        writer.grab_frame()</span><br></pre></td></tr></table></figure>
-
-]]></content>
+    <title>测试</title>
+    <url>/2020/04/10/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="&#x591A;&#x5C11;&#x554A;"><a href="#&#x591A;&#x5C11;&#x554A;" class="headerlink" title="&#x591A;&#x5C11;&#x554A;"></a>&#x591A;&#x5C11;&#x554A;</h2><h2 id="&#x5F53;&#x65F6;&#x7684;"><a href="#&#x5F53;&#x65F6;&#x7684;" class="headerlink" title="&#x5F53;&#x65F6;&#x7684;"></a>&#x5F53;&#x65F6;&#x7684;</h2>]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>当时的</title>
+    <url>/2020/04/10/%E5%BD%93%E6%97%B6%E7%9A%84/</url>
+    <content><![CDATA[<h2 id="dsadcaji&#x5373;&#x5F88;&#x591A;&#x65F6;&#x5019;"><a href="#dsadcaji&#x5373;&#x5F88;&#x591A;&#x65F6;&#x5019;" class="headerlink" title="dsadcaji&#x5373;&#x5F88;&#x591A;&#x65F6;&#x5019;"></a>dsadcaji&#x5373;&#x5F88;&#x591A;&#x65F6;&#x5019;</h2>]]></content>
   </entry>
   <entry>
     <title>标签</title>
     <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
