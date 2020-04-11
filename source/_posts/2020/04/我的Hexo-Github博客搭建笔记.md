@@ -85,8 +85,8 @@ deploy:
 ```
 配置完成之后，使用```hexo n 博客题目``` 新建，```hexo g```生成，然后```hexo d```发布，也可以```hexo g -d```将两步合为一步。然后需要等待一段时间，就可以在```https://johnjim0816.github.io/```看到自己的博客了。
 
+![image1](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/1.png)
 
-![fig1](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/4/10/1.png)
 
 
 
@@ -128,7 +128,7 @@ new_post_name: :year/:month/:title.md
 
 插入本地图片的方式参考[CSDN](https://blog.csdn.net/JohnJim0/article/details/105430915)，注意hexo-asset-image模块的安装可能会造成文章目录中文乱码的bug，如下：
 
-![fig2](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/4/10/2.png)
+![image2](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/2.png)
 
 
 ### 添加站内搜索
@@ -244,15 +244,21 @@ symbols_count_time:
 * [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud
 * 登录成功后，进入后台点击左上角的创建应用：
   
+  ![image3](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/3.png)
+  
 * 创建好应用，进入应用，左边栏找到 **设置** ，然后点击 **应用Key**，此时记录出现的 **App ID** 和 **App Key**，后面配置文件中会用到
 * 因为评论和文章阅读数统计依赖于存储，所以还需要建立两个新的存储 `Class`，左边栏找到并点击 **存储**，点击 **创建Class**:
-* 
+  ![image4](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/4.png)
+
 * 创建两个存储Class，分别命名为: `Counter` 和 `Comment`
 * 还需要为应用添加安全域名，左边栏点击 **设置**，找到 **安全中心**，点击后会看到 **安全域名** 设置框，输入博客使用的域名，点击保存即可：
+  ![image5](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/5.png)
 
 #### 修改主题配置文件```next/_config.yml```
 
 找到valine部分，
+
+![image6](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/6.png)
 
 上面几项内容的含义，这里简单说明需要修改的部分，具体还是要看 [Valine官网中配置相关的内容](https://valine.js.org/configuration.html)：
 
@@ -273,3 +279,5 @@ symbols_count_time:
 
 #### 删除评论
 直接在leancloud后台的存储中找到之前创建的```Comment```这个`class`找到对应评论删除即可。
+
+![image7](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/7.png)

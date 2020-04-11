@@ -6,7 +6,7 @@ tags:
     - python3
 ---
 
-![](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/4/11/python画动态图并保存视频-封面.jpeg)
+![](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/python3画动态图并保存视频/封面.jpeg)
 
 ## ion()画动态图
 可以参考[网页](https://www.omegaxyz.com/2018/06/03/python-matplotlib-dynamic-graph/)，具体示例如下：
