@@ -8,10 +8,6 @@ tags:
 ---
 ## 从零开始搭建个人博客
 
-主要参考以下链接
-
-[官方文档](https://hexo.io/zh-cn/docs/)，[知乎](https://zhuanlan.zhihu.com/p/26625249)，[b站视频](https://www.bilibili.com/video/BV1Yb411a7ty)
-
 ### 安装依赖包node.js
 
 Hexo是一款基于**Node.js**的静态博客框架， 所谓巧妇难为无米之炊，要想搭建上层的博客必须先安装底层的node.js，可以直接上[node.js官网](https://nodejs.org/en/)下载安装，该安装包除了node.js之外还包括node软件包管理工具**npm**。
@@ -88,11 +84,15 @@ deploy:
 ![image1](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/1.png)
 
 
-## 安装next主题来装点博客
+### 安装next主题来装点博客
 
-hexo自带的主题是landscape，对应带主目录`themes`文件夹下，这个主题只能说是平平无奇！！！
+hexo自带的主题是landscape，对应带主目录```themes```文件夹下，这个主题只能说是平平无奇！！！
 
-因此需要安装一个靓靓的主题来使我们的博客秀色可餐，这里推荐[next主题](https://github.com/theme-next/hexo-theme-next)，截止2020年4月10日该主题已经更新到了v7.8.0。注意还有一个[iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)，这个虽然star很多但是已经不维护了，所以推荐前面一个。可以直接下载整个仓库并在本地解压，将名字改为next，然后放到主目录下的`themes`文件夹下。
+因此需要安装一个靓靓的主题来使我们的博客秀色可餐，这里推荐github上star较多的[next主题](https://github.com/theme-next/hexo-theme-next)。
+
+>截止2020年4月10日该主题已经更新到了v7.8.0。注意还有一个[iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)，这个虽然star很多，并且网上的很多教程是跟这个主题关联的，但是已经不维护了，所以还是推荐前面一个。
+
+可以直接下载整个仓库并在本地解压，将名字改为next，然后放到博客根目录下的```themes```文件夹下。
 
 在站点配置文件即```blogs/_config.yml```中将语言更改为中文，如下，注意冒号之后有一个空格
 
@@ -105,10 +105,36 @@ language: zh-CN
 ```
 theme: next
 ```
-
-保存之后使用hexo g -d可以看到初步效果，不过在类似于这些测试的操作还是建议在本地服务器上进行，github page刷新的速度简直就是谜一样的存在。
+保存之后使用hexo g -d可以看到初步效果，不过github pages刷新较慢，因此测试优化博客网页时建议在本地服务上进行。
 
 ## 后续优化
+
+### 首先阅读[Hexo官方文档](https://hexo.io/zh-cn/docs/)
+
+官方文档虽然有时候难啃，但是给出的方法总是最新最不容易走坑的。个人认为官方文档中的以下几点有必要关注一下：
+* 配置：即通过对上文所说的博客根目录下的站点配置文件```_config.yml```来修改大部分配置，包括网站标题等等，注意每次修改该配置文件后需要```hexo clean```之后才能通过```hexo g```生效。
+* 写作：关注```scaffolds```文件夹下的模版文件，如新文章的模版文件```post.md```
+* Front-matter：即文章开头的一些变量，常见包括文章名，日期等，可以自己添加categories以及tags方便管理
+  
+### 然后再看[next主题官方文档](https://theme-next.org/docs/)
+
+next官方文档将配置分类[入门](https://theme-next.org/docs/getting-started/)、[主题设定](https://theme-next.org/docs/theme-settings/)、[第三方服务](https://theme-next.org/docs/third-party-services/)、[标签插件](https://theme-next.org/docs/tag-plugins/)和[高级设置](https://theme-next.org/docs/advanced-settings)等几个大类，每个大类又分为几个小类，如下：
+
+![](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/8.png)
+
+#### 入门
+包括next主题安装与基本配置，next的配置文件即主题配置文件在```next/_config.yml```处。
+
+#### 主题设定
+主要包括文字对齐、代码块样式、阅读进度和字体定制等。
+其中还有页脚与侧边栏的设置，在[帖子](https://theme-next.org/docs/theme-settings/posts)下还有字数统计选项，也包括如何[自定义界面](https://theme-next.org/docs/theme-settings/custom-pages)以及[SEO](https://theme-next.org/docs/theme-settings/seo)。
+
+#### 第三方服务
+
+第三方包括数学公式的支持，评论系统，以及统计与分析，其中评论系统不建议采取官方文档所推荐的那些，而是使用valine系统，详情见下文。而统计与分析一个很常见的功能就是统计访问量，而valine最新版本已经支持基于leancloud的计数了，同样见下文的valine评论系统。
+
+至于标签插件和高级设置则看个人喜好了，下面的内容将对官方文档的说明做一个补充，并且持续更新～～。
+
 
 ### 给本地文章md文件按年月分类
 
@@ -196,9 +222,6 @@ menu:
 
 由此可以类推新建一个类似于标签、分类这样的菜单栏，可参考[这个博客](https://hoxis.github.io/Hexo+Next%20%E6%96%B0%E5%A2%9E%E8%8F%9C%E5%8D%95%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2.html)
 
-### 增加百度统计
-
-可参考[官方文档](http://theme-next.iissnan.com/getting-started.html#theme-settings)
 
 ### 如何开启阅读全文
 
@@ -282,3 +305,12 @@ symbols_count_time:
 直接在leancloud后台的存储中找到之前创建的```Comment```这个`class`找到对应评论删除即可。
 
 ![image7](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/7.png)
+
+
+## 参考链接
+
+[Hexo官方文档](https://hexo.io/zh-cn/docs/)
+
+[知乎 - GitHub+Hexo 搭建个人网站详细教程](https://zhuanlan.zhihu.com/p/26625249)
+
+[b站 - 手把手教你从0开始搭建自己的个人博客](https://www.bilibili.com/video/BV1Yb411a7ty)
