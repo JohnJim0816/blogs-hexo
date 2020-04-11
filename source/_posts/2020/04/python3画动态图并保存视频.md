@@ -1,6 +1,6 @@
 ---
 title: python3画动态图并保存视频
-date: 2020-04-10 21:29:41
+date: 2020-04-06 21:29:30
 categories: python3
 tags: 
     - python3

@@ -156,7 +156,7 @@ local_search:
   top_n_per_article: 1
 ```
 
-### 给网页文章增加分类和标签
+### 给网页文章增加分类和标签 
 
 首先```hexo n page categories```以及```hexo n page tags```新建目录页和标签页，此时本地```source```文件夹下会生成相应的文件夹，将比如```categories```中的index.md更改如下：
 ```markdown
@@ -251,7 +251,7 @@ symbols_count_time:
   ![image4](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/4.png)
 
 * 创建两个存储Class，分别命名为: `Counter` 和 `Comment`
-* 还需要为应用添加安全域名，左边栏点击 **设置**，找到 **安全中心**，点击后会看到 **安全域名** 设置框，输入博客使用的域名，点击保存即可：
+* 还需要为应用添加安全域名，左边栏点击 **设置**，找到 **安全中心**，点击后会看到 **安全域名** 设置框，输入博客使用的域名(注意下图去掉最后一个"/")，点击保存即可：
   ![image5](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/04/我的Hexo-Github博客搭建笔记/5.png)
 
 #### 修改主题配置文件```next/_config.yml```
