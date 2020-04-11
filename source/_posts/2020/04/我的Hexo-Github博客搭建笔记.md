@@ -234,3 +234,42 @@ symbols_count_time:
   item_text_total: true
 ```
 最后需要```hexo clean```然后重新生成，否则可能会出现阅读时间NaN字样，参考[官方](https://theme-next.org/docs/theme-settings/posts)
+
+### 增加valine评论系统
+
+[知乎](https://www.zhihu.com/question/267598518)有关于评论系统的讨论，目前我暂时使用valine评论系统。
+
+#### leancloud中进行相关的准备工作
+该评论系统依赖于leancloud，所以需要先在leancloud中进行相关的准备工作。
+* [登录](https://leancloud.cn/dashboard/login.html#/signin) 或 [注册](https://leancloud.cn/dashboard/login.html#/signup) LeanCloud
+* 登录成功后，进入后台点击左上角的创建应用：
+  
+* 创建好应用，进入应用，左边栏找到 **设置** ，然后点击 **应用Key**，此时记录出现的 **App ID** 和 **App Key**，后面配置文件中会用到
+* 因为评论和文章阅读数统计依赖于存储，所以还需要建立两个新的存储 `Class`，左边栏找到并点击 **存储**，点击 **创建Class**:
+* 
+* 创建两个存储Class，分别命名为: `Counter` 和 `Comment`
+* 还需要为应用添加安全域名，左边栏点击 **设置**，找到 **安全中心**，点击后会看到 **安全域名** 设置框，输入博客使用的域名，点击保存即可：
+
+#### 修改主题配置文件```next/_config.yml```
+
+找到valine部分，
+
+上面几项内容的含义，这里简单说明需要修改的部分，具体还是要看 [Valine官网中配置相关的内容](https://valine.js.org/configuration.html)：
+
+| 参数       | 用途                                                         |
+| ---------- | ------------------------------------------------------------ |
+| enable     | 这是用于主题中配置的，不是官方Valine的参数，**true**时控制开启此评论系统 |
+| appId      | 这是在 [leancloud](https://leancloud.cn/) 后台应用中获取的，也就是上面提到的 **App ID** |
+| appKey     | 这是在 [leancloud](https://leancloud.cn/) 后台应用中获取的，也就是上面提到的 **App Key** |
+| notify     | 用于控制是否开启邮件通知功能，具体参考[邮件提醒配置](https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置) |
+| verify     | 用于控制是否开启评论验证码功能                               |
+| avatar     | 用于配置评论项中用户头像样式，有多种选择：mm, identicon, monsterid, wavatar, retro, hide。详细参考：[头像配置](https://valine.js.org/avatar.html) |
+| placehoder | 评论框的提示符                                               |
+| visitor    | 控制是否开启文章阅读数的统计功能i, 详情阅读[文章阅读数统计](https://valine.js.org/visitor.html) |
+
+#### 完善评论通知
+
+**Valine** 评论邮件提醒功能不太健全，通知邮件中没有文章直达链接，**Valine** 官网中提供了评论系统第三方功能扩展[Valine](https://github.com/zhaojun1998/Valine-Admin)链接，按照链接中的说明，非常详细的步骤，一步步很容易实现完备的评论系统后台管理以及邮件提醒功能，部分高级配置[点我](https://github.com/zhaojun1998/Valine-Admin/blob/master/高级配置.md#自定义邮件服务器)了解。
+
+#### 删除评论
+直接在leancloud后台的存储中找到之前创建的```Comment```这个`class`找到对应评论删除即可。
