@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:33:21
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-11 08:22:47
+# @Last Modified time: 2020-04-11 08:49:08
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # See: https://theme-next.org/docs/theme-settings/
@@ -260,7 +260,7 @@ symbols_count_time:
   item_text_total: true
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
@@ -457,11 +457,11 @@ font:
 # ---------------------------------------------------------------
 
 # Disable Baidu transformation on mobile devices.
-disable_baidu_transformation: false
+disable_baidu_transformation: true
 
 # If true, site-subtitle will be added to index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
-index_with_subtitle: false
+index_with_subtitle: true
 
 # Automatically add external URL with Base64 encrypt & decrypt.
 exturl: false
@@ -480,10 +480,10 @@ yandex_site_verification:
 
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
-baidu_site_verification:
+baidu_site_verification: DdUOaAehOv
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+baidu_push: true
 
 
 # ---------------------------------------------------------------

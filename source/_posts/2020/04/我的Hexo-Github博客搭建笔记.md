@@ -230,4 +230,4 @@ symbols_count_time:
   item_text_post: true
   item_text_total: true
 ```
-最后需要```hexo clean```然后重新生成，否则可能会出现阅读时间NaN字样。
+最后需要```hexo clean```然后重新生成，否则可能会出现阅读时间NaN字样，参考[官方](https://theme-next.org/docs/theme-settings/posts)
