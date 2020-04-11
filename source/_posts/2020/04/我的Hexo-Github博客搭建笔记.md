@@ -23,6 +23,7 @@ tags:
 ```bash
 npm config set registry https://registry.npm.taobao.org
 ```
+<!-- more -->
 
 ### 安装hexo
 
@@ -86,6 +87,8 @@ deploy:
 
 
 ![fig1](https://raw.githubusercontent.com/JohnJim0816/blog-figures/master/2020/4/10/1.png)
+
+
 
 ## 安装next主题来装点博客
 
