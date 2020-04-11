@@ -196,4 +196,8 @@ menu:
 
 ### 增加百度统计
 
-可参考[官方文档](http://theme-next.iissnan.com/getting-started.html#theme-settings)，
+可参考[官方文档](http://theme-next.iissnan.com/getting-started.html#theme-settings)
+
+### 如何开启阅读全文
+
+在文章中加入```<!-- more -->```即可，参考[官方文档](https://theme-next.org/docs/theme-settings/posts)
