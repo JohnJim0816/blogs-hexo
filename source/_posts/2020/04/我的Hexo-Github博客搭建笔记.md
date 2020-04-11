@@ -74,7 +74,7 @@ hexo s
 npm install hexo-deployer-git --save
 ```
 
-然后在主目录的配置文件```_config.yml```中(这里称之为<b><font color=red>站点配置文件</font></b>，后面还有一个同名的<b><font color=red>站主题配置文件</font></b>)，找到deploy部分，并更改如下，注意repo部分根据个人github用户名(我的为JohnJim0816)而定。
+然后在主目录的配置文件```_config.yml```中(这里称之为<b><font color=red>站点配置文件</font></b>，后面还有一个同名的<b><font color=blue>主题配置文件</font></b>)，找到deploy部分，并更改如下，注意repo部分根据个人github用户名(我的为JohnJim0816)而定。
 
 ```yml
 deploy:
