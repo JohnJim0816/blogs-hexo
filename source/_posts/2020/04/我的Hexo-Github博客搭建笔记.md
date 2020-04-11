@@ -201,3 +201,33 @@ menu:
 ### 如何开启阅读全文
 
 在文章中加入```<!-- more -->```即可，参考[官方文档](https://theme-next.org/docs/theme-settings/posts)
+
+### 增加阅读时间和字数统计
+首先安装hexo-symbols-count-time，
+```bash
+npm i hexo-symbols-count-time --save
+```
+如果之前安装了hexo-wordcount就要卸载掉```npm uninstall hexo-wordcount```，因为它只适用于老版本，网页也有教程是这个，
+修改站点配置文件```/_config.yml```，没有就添加
+```markdown
+symbols_count_time: 
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  awl: 2
+  wpm: 300
+```
+其中awl（Average Word Length）的数值是设定多少字符统计为一个字(word)，中文博客需要设置为 2。wpm（Words Per Minute）是你的阅读速度，多少字（word）统计为阅读时长一分钟。以下是官方文档里的一些阅读速度参考数据：
+* 慢速：200
+* 中速：275（默认）
+* 快速：350
+  
+然后修改主题配置文件```next/_config.yml```，
+```
+symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: true
+```
+最后需要```hexo clean```然后重新生成，否则可能会出现阅读时间NaN字样。

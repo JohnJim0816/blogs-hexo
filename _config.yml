@@ -1,7 +1,7 @@
 # @Author: Jiang Ji
 # @Date:   2020-04-10 21:27:41
 # @Last Modified by:   Jiang Ji
-# @Last Modified time: 2020-04-11 07:46:56
+# @Last Modified time: 2020-04-11 08:30:30
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -63,7 +63,13 @@ search:
   format: html
   limit: 10000
 
-
+symbols_count_time: 
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  awl: 2
+  wpm: 300
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
